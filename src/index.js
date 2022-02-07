@@ -28,16 +28,16 @@ app.get('/datas', urlencodedParser, function(req, res) {
   db.collection("Appointment")
   .get()
   .then(doc =>{
-    if(!doc.exists) throw new Error('Data not found');
-    //sdfsdfds
     var arr = [];
     for(let i = 0; i< doc.docs.length; i++){
       const data = doc.docs[i].data()
       arr.push(data)
     }
-    res.json(arr);
+    console.log(arr)
+    res.send(arr);
   })
   .catch((error) =>{
+    console.log(error)
     res.send("Error is " + error);
   })
 })
