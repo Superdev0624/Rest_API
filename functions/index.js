@@ -29,6 +29,7 @@ app.get('/datas', urlencodedParser, function(req, res) {
   .get()
   .then(doc =>{
     if(!doc.exists) throw new Error('Data not found');
+    //sdfsdfds
     var arr = [];
     for(let i = 0; i< doc.docs.length; i++){
       const data = doc.docs[i].data()
